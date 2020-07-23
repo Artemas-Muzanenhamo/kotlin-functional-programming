@@ -9,6 +9,10 @@ fun main() {
     println("=====DECLARATIVE STYLE OF PROGRAMMING========")
     declarativeStyle()
     println("============================================")
+
+    println("=====LAMBDAS========")
+    lambdas()
+    println("============================================")
 }
 
 /**
@@ -70,4 +74,14 @@ private fun declarativeStyle() {
  * { (parameter list) -> body }
  */
 private fun lambdas() {
+    // given the numbers below, iterate through them and print each one
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+// External iterators - YOU MANAGE THE ITERATION
+//    for (number in numbers) {
+//        println(number)           <<-- Imperative style
+//    }
+
+// Internal iterators - Functional style
+     numbers.forEach { number -> println(number)}
 }
