@@ -83,5 +83,6 @@ private fun lambdas() {
 //    }
 
 // Internal iterators - Functional style
-     numbers.forEach { number -> println(number)}
+//     numbers.forEach { number -> println(number)} Or use the implicit parameter to the function as below
+    numbers.forEach { println(it) }
 }
