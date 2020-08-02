@@ -83,6 +83,11 @@ private fun lambdas() {
 //    }
 
 // Internal iterators - Functional style
-//     numbers.forEach { number -> println(number)} Or use the implicit parameter to the function as below
+// numbers.forEach { number -> println(number)} Or use the implicit parameter to the function as below
+// Of course if you have more than one parameter then the idea of using the implicit parameter won't apply here.
     numbers.forEach { println(it) }
+
+//    forEach { number -> println(number) } is a pass-through lambda which means that it just takes an input and just
+//    passes the parameter to a function. Here we can even exercise method references instead as below:
+    numbers.forEach(::println)
 }
