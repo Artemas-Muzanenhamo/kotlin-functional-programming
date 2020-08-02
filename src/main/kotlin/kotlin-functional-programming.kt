@@ -6,11 +6,11 @@ fun main() {
     imperativeStyle()
     println("============================================")
 
-    println("=====DECLARATIVE STYLE OF PROGRAMMING========")
+    println("=====DECLARATIVE STYLE OF PROGRAMMING=======")
     declarativeStyle()
     println("============================================")
 
-    println("=====LAMBDAS========")
+    println("=====================LAMBDAS================")
     lambdas()
     println("============================================")
 }
@@ -90,4 +90,8 @@ private fun lambdas() {
 //    forEach { number -> println(number) } is a pass-through lambda which means that it just takes an input and just
 //    passes the parameter to a function. Here we can even exercise method references instead as below:
     numbers.forEach(::println)
+    
+//    Assigning a lambda to a variable
+    val printIt = { number: Int -> println(number) }
+    printIt(4)
 }
