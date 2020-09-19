@@ -13,6 +13,22 @@ fun main() {
     println("=====================LAMBDAS================")
     lambdas()
     println("============================================")
+
+    println("=====================FILTER=================")
+    filterExample()
+    println("============================================")
+
+    println("=====================MAP====================")
+    mapExample()
+    println("============================================")
+
+    println("=====================REDUCE=================")
+    reduceExample()
+    println("============================================")
+
+    println("=====================FLATTEN================")
+    flattenExample()
+    println("============================================")
 }
 
 /**
@@ -110,6 +126,72 @@ private fun lambdas() {
     compute(7) { result -> println(result) }
 }
 
-fun compute(n: Int, action: (Double) -> Unit) {
+private fun compute(n: Int, action: (Double) -> Unit) {
     action(n * 2.1)
+}
+
+private fun filterExample() {
+    /**
+     * Filter Characteristics:
+     *
+     * Filter takes a Predicate which returns a true/false value and filter based on the
+     * result that resolves to true.
+     */
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    // get all even numbers
+    val evenNumbers = numbers.filter { it % 2 == 0 }
+    println(evenNumbers)
+}
+
+private fun mapExample() {
+    /**
+     * Map Characteristics:
+     *
+     * The number of input is the same number of output.
+     * The type of the output may not be the same. e.g. .map(strings) -> returns int
+     */
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+//    Get even numbers multiplied by 2
+    val evenNumbersMultiplied = numbers
+        .filter { it % 2 == 0 }
+        .map { it * 2 }
+
+    println(evenNumbersMultiplied)
+}
+
+private fun reduceExample() {
+    /**
+     * Reduce Function Characteristics:
+     *
+     * Takes a collection of data and reduces it to a single value often.
+     * Terminal operation.
+     *
+     */
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+//    Get even numbers multiplied by 2 and get the sum of all the elements
+    val sumOfMultipliedEvenNumbers = numbers
+        .filter { it % 2 == 0 }
+        .map { it * 2 }
+        .sum()
+
+    println(sumOfMultipliedEvenNumbers)
+}
+
+private fun flattenExample() {
+    /**
+     * Flatten Characteristics:
+     *
+     * Flattens a list of list down to a single list of all values
+     */
+    val numbers = listOf(listOf(1, 2), listOf(3, 4, 5))
+    println("unflattened numbers")
+    println(numbers.size)
+    println(numbers)
+
+    println("flattened numbers")
+    val flattenedNumbers = numbers.flatten()
+    println(flattenedNumbers.size)
+    println(flattenedNumbers)
 }
