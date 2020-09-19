@@ -92,6 +92,7 @@ private fun lambdas() {
   * Of course if you have more than one parameter then the idea of using the implicit parameter won't apply here.
   * */
     numbers.forEach { println(it) }
+    println("======================")
 
 /**
  *  forEach { number -> println(number) } is a pass-through lambda which means that it just takes an input and just
@@ -100,6 +101,15 @@ private fun lambdas() {
     numbers.forEach(::println)
     
 //    Assigning a lambda to a variable
+    println("======Assigning a lambda to a variable===========")
     val printIt = { number: Int -> println(number) }
     printIt(4)
+
+//    Receive Lambdas to functions
+    println("=======Receive Lambdas to functions=========")
+    compute(7) { result -> println(result) }
+}
+
+fun compute(n: Int, action: (Double) -> Unit) {
+    action(n * 2.1)
 }
