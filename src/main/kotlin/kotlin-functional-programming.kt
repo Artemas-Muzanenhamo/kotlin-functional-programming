@@ -29,6 +29,10 @@ fun main() {
     println("=====================FLATTEN================")
     flattenExample()
     println("============================================")
+
+    println("=====================FLAT MAP===============")
+    flatMapExample()
+    println("============================================")
 }
 
 /**
@@ -194,4 +198,39 @@ private fun flattenExample() {
     val flattenedNumbers = numbers.flatten()
     println(flattenedNumbers.size)
     println(flattenedNumbers)
+}
+
+private fun flatMapExample() {
+    /**
+     * A Map has the following definition:
+     * one-to-one function e.g. .map(person) -> return person.firstname | output = list of elements
+     *
+     * A FlatMap has the following definition:
+     * one-to-many function e.g. .flatMap(person) -> return listOf(person.emailAddress) | output = list of list
+     */
+    println("map output")
+    val numbers = listOf(1, 2, 3)
+    println(numbers.map { e -> e + 1 }) // output = list
+    println("return a list of list with .map()")
+    println(numbers.map { e -> listOf(e - 1, e + 1) })
+
+    /**
+     * What if you have one-to-many function
+     * but you don't want a list of list, but just
+     * a single list
+     *
+     * Solution: We would need to:
+     * .map()
+     * .flatten()
+     */
+    println("map n flatten")
+    println(numbers.map { e -> listOf(e - 1, e + 1) }.flatten())
+
+    /**
+     * If you have a many-to-many function
+     * but you want a list not a list-of-list as output,
+     * then use .flatMap()
+     */
+    println(".flatMap() operation")
+    println(numbers.flatMap { e -> listOf(e - 1, e + 1) })
 }
