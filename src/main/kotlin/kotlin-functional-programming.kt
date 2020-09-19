@@ -77,18 +77,26 @@ private fun lambdas() {
     // given the numbers below, iterate through them and print each one
     val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-// External iterators - YOU MANAGE THE ITERATION
-//    for (number in numbers) {
-//        println(number)           <<-- Imperative style
-//    }
+/**
+ * External iterators - YOU MANAGE THE ITERATION
+    for (number in numbers) {
+        println(number)           <<-- Imperative style
+    }
+ */
 
-// Internal iterators - Functional style
-// numbers.forEach { number -> println(number)} Or use the implicit parameter to the function as below
-// Of course if you have more than one parameter then the idea of using the implicit parameter won't apply here.
+ /**
+  * Internal iterators - Functional style
+  * numbers.forEach { number -> println(number)}
+  *
+  * Or use the implicit parameter to the function as below
+  * Of course if you have more than one parameter then the idea of using the implicit parameter won't apply here.
+  * */
     numbers.forEach { println(it) }
 
-//    forEach { number -> println(number) } is a pass-through lambda which means that it just takes an input and just
-//    passes the parameter to a function. Here we can even exercise method references instead as below:
+/**
+ *  forEach { number -> println(number) } is a pass-through lambda which means that it just takes an input and just
+    passes the parameter to a function. Here we can even exercise method references instead as below:
+ */
     numbers.forEach(::println)
     
 //    Assigning a lambda to a variable
