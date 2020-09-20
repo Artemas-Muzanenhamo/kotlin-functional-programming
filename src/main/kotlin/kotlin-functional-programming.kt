@@ -33,6 +33,11 @@ fun main() {
     println("=====================FLAT MAP===============")
     flatMapExample()
     println("============================================")
+
+    println("=====================SEQUENCE===============")
+    withoutSequenceExample()
+    withSequenceExample()
+    println("============================================")
 }
 
 /**
@@ -233,4 +238,52 @@ private fun flatMapExample() {
      */
     println(".flatMap() operation")
     println(numbers.flatMap { e -> listOf(e - 1, e + 1) })
+}
+
+private fun withoutSequenceExample() {
+    /**
+     * Functional Composition + Lazy Evaluation = Functional Programming.
+     *
+     * Polymorphism is to OOP
+     * as Lazy Evaluation is to Functional Programming.
+     */
+    val numbers = listOf(1, 2, 3, 7, 5, 4, 6, 8, 20)
+
+    //find the first even number > 3 and double it
+    numbers
+        .filter(::isGreaterThan)
+        .filter(::isEven)
+        .map(::doubleIt)
+        .first()
+}
+
+private fun withSequenceExample() {
+    /**
+     * asSequence gives you the same behaviour as
+     * .stream() from Java
+     */
+    println("================================================")
+    val numbers = listOf(1, 2, 3, 7, 5, 4, 6, 8, 20)
+
+    //find the first even number > 3 and double it
+    numbers
+        .asSequence() // Yes I want Lazy Evaluation
+        .filter(::isGreaterThan)
+        .filter(::isEven)
+        .map(::doubleIt)
+        .first()
+}
+
+private fun isGreaterThan(number: Int): Boolean {
+    println("isGreaterThan is called for element: $number")
+    return number > 3
+}
+
+private fun isEven(number: Int): Boolean {
+    println("isEven() is called for element: $number")
+    return number % 2 == 0
+}
+
+private fun doubleIt(number: Int): Int {
+    return number * 2
 }
