@@ -3,7 +3,7 @@ package functional.programming.aggregation
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-class RangeExamplesTest {
+class SumExamplesTest {
     @Test
     fun `Get the total sum of numbers in a list`() {
         val listOfNumbers : List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
