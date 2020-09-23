@@ -1,5 +1,11 @@
 # Kotlin Functional Programming
 
+<!--ts-->
+* [Aggregation Operations](#aggregation-operations)
+    * [Sum](#sum)
+    * [Max](#max)
+<!--te-->
+
 ## Aggregation Operations
 
 ### Sum
@@ -19,4 +25,28 @@ val totalSum : Int = rangeOfNumbers.sum()
 ```kotlin
 val listOfIntRange : List<IntRange> = listOf(1..10)
 val totalSum : Int = listOfIntRange.sumBy(IntRange::sum)
+```
+
+### Max
+- Get the maximum value in the list of numbers
+```kotlin
+val listOfNumbers = listOf(100, 2, 43, 632, 55, 334)
+val biggestValue = listOfNumbers.max()
+```
+
+- Get the maximum value in a list of number list
+```kotlin
+val listsOfNumbers = listOf(listOf(100, 2, 43), listOf(78, 565, 76), listOf(67, 443, 98))
+val biggestValue = listsOfNumbers.flatten().max()
+```
+
+- Get the maximum value in a list of ranges list
+```kotlin
+val listsOfNumbers = listOf(listOf(1000..2000), listOf(1..10), listOf(200..300), listOf(5..7))
+
+val biggestValue = listsOfNumbers
+    .asSequence()
+    .flatten()
+    .flatten()
+    .max()
 ```

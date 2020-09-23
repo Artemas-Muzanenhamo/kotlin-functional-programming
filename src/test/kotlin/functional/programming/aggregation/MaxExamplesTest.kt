@@ -3,7 +3,7 @@ package functional.programming.aggregation
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-class CountExamplesTest {
+class MaxExamplesTest {
     @Test
     fun `Get the maximum value in the list of numbers`() {
         val listOfNumbers = listOf(100, 2, 43, 632, 55, 334)
