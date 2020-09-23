@@ -1,4 +1,4 @@
-package main.kotlin
+package main.kotlin.kotlin.functional.programming
 
 
 fun main() {

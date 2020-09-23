@@ -31,5 +31,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "kotlin.functional.programming.AppKt"
+    mainClassName = "kotlin.functional.programming.kotlin-functional-programming.kt"
 }
