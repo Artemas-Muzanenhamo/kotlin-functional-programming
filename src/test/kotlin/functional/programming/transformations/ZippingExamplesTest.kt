@@ -6,11 +6,13 @@ import org.junit.jupiter.api.Test
 class ZippingExamplesTest {
 
     private val books = listOf(
-        Book("harry potter")
+        Book("harry potter"),
+        Book("artemas the great")
     )
 
     private val authors = listOf(
-        Author("joanne", "rowling")
+        Author("joanne", "rowling"),
+        Author("artemas", "prime")
     )
 
     @Test
@@ -18,7 +20,9 @@ class ZippingExamplesTest {
         val booksWithAuthors: List<Pair<Book, Author>> = books.zip(authors)
 
         assertThat(booksWithAuthors)
-            .first()
-            .isEqualTo(Pair(books.first(), authors.first()))
+            .containsExactly(
+                Pair(books.first(), authors.first()),
+                Pair(books.last(), authors.last())
+            )
     }
 }
