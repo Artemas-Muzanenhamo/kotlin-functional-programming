@@ -14,10 +14,11 @@ class ZippingExamplesTest {
     )
 
     @Test
-    fun `Zip to create a list of Books with Authors`() {
-        val booksWithAuthors = books.zip(authors)
+    fun `Zip to create a list of Pairs containing Books with Authors`() {
+        val booksWithAuthors: List<Pair<Book, Author>> = books.zip(authors)
 
         assertThat(booksWithAuthors)
-            .containsExactly(Pair(books.first(), authors.first()))
+            .first()
+            .isEqualTo(Pair(books.first(), authors.first()))
     }
 }
