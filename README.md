@@ -50,3 +50,30 @@ val biggestValue = listsOfNumbers
     .flatten()
     .max()
 ```
+
+### Zip
+- Given the following data: 
+
+```kotlin
+private val books = listOf(
+    Book("harry potter"),
+    Book("artemas the great")
+)
+
+private val authors = listOf(
+    Author("joanne", "rowling"),
+    Author("artemas", "prime")
+)
+```
+
+- Zip to create a list of Pairs containing Books with Authors
+
+```kotlin
+val booksWithAuthors: List<Pair<Book, Author>> = books.zip(authors)
+
+assertThat(booksWithAuthors)
+    .containsExactly(
+        Pair(books.first(), authors.first()),
+        Pair(books.last(), authors.last())
+    )
+```
