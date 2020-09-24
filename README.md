@@ -4,6 +4,7 @@
 * [Aggregation Operations](#aggregation-operations)
     * [Sum](#sum)
     * [Max](#max)
+    * [Zip](#zip)
 <!--te-->
 
 ## Aggregation Operations
