@@ -4,6 +4,7 @@
 * [Aggregation Operations](#aggregation-operations)
     * [Sum](#sum)
     * [Max](#max)
+* [Transformations Operations](#transformations-operations)
     * [Zip](#zip)
 <!--te-->
 
@@ -51,6 +52,8 @@ val biggestValue = listsOfNumbers
     .flatten()
     .max()
 ```
+## Transformations Operations
+- These functions build new collections from existing ones based on the transformation rules provided.
 
 ### Zip
 - Given the following data: 
@@ -71,10 +74,4 @@ private val authors = listOf(
 
 ```kotlin
 val booksWithAuthors: List<Pair<Book, Author>> = books.zip(authors)
-
-assertThat(booksWithAuthors)
-    .containsExactly(
-        Pair(books.first(), authors.first()),
-        Pair(books.last(), authors.last())
-    )
 ```
