@@ -75,3 +75,18 @@ private val authors = listOf(
 ```kotlin
 val booksWithAuthors: List<Pair<Book, Author>> = books.zip(authors)
 ```
+
+### Flatten
+```kotlin
+val firstNumberSet = listOf(10, 20, 30)
+val secondNumberSet = listOf(100, 90, 80)
+val thirdNumberSet = listOf(40, 60, 50)
+
+val numbers = listOf(firstNumberSet, secondNumberSet, thirdNumberSet)
+```
+
+- Get the total sum of all numbers
+
+```kotlin
+val sum = numbers.flatten().sum()
+```
