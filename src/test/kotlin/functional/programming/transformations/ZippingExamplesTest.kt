@@ -19,6 +19,11 @@ class ZippingExamplesTest {
     fun `Zip to create a list of Pairs containing Books with Authors`() {
         val booksWithAuthors: List<Pair<Book, Author>> = books.zip(authors)
 
+//         RESULT:
+//        [
+//            (Book(title = harry potter), Author(name = joanne, surname = rowling)),
+//            (Book(title = artemas the great), Author(name = artemas, surname = prime))
+//        ]
         assertThat(booksWithAuthors)
             .containsExactly(
                 Pair(books.first(), authors.first()),
