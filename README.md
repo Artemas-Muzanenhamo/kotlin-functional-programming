@@ -6,6 +6,7 @@
     * [Max](#max)
 * [Transformations Operations](#transformations-operations)
     * [Zip](#zip)
+    * [Flatten](#flatten)
 <!--te-->
 
 ## Aggregation Operations
