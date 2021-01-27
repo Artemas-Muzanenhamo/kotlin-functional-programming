@@ -91,3 +91,20 @@ val numbers = listOf(firstNumberSet, secondNumberSet, thirdNumberSet)
 ```kotlin
 val sum = numbers.flatten().sum()
 ```
+
+### Mapping
+
+- Given the following data:
+```kotlin
+val artemas = Author("artemas", "prime")
+val kobe = Author("kobe", "bryant")
+val james = Author("james", "harden")
+
+val authors = listOf(artemas, kobe, james)
+```
+
+- Return a list of author names
+
+```kotlin
+val names = authors.map { it.name }
+```
