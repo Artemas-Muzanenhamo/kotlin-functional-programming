@@ -1,5 +1,7 @@
 # Kotlin Functional Programming
 
+![Kotling Func Programming CI](https://github.com/Artemas-Muzanenhamo/kotlin-functional-programming/workflows/Kotling%20Func%20Programming%20CI/badge.svg?branch=develop)
+
 <!--ts-->
 * [Aggregation Operations](#aggregation-operations)
     * [Sum](#sum)
@@ -7,6 +9,7 @@
 * [Transformations Operations](#transformations-operations)
     * [Zip](#zip)
     * [Flatten](#flatten)
+    * [Mapping](#mapping)
 <!--te-->
 
 ## Aggregation Operations
