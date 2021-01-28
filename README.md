@@ -111,3 +111,15 @@ val authors = listOf(artemas, kobe, james)
 ```kotlin
 val names = authors.map { it.name }
 ```
+
+### Association
+- Given the following data: 
+```kotlin
+val numbers = listOf("one", "two", "three", "four")
+```
+
+- Associate each word with it's length so that for example the input `one` will have an output `one=3` where `3` is the length of the word.
+
+```kotlin
+val listOfNumbersAssociated = numbers.associateWith { it.length }
+```
